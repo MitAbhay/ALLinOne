@@ -8,7 +8,7 @@ interface Props {
   posts: [Post]
 }
 export default function Home({ posts }: Props) {
-  // console.log(posts)
+  console.log(posts);
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
@@ -33,25 +33,26 @@ export default function Home({ posts }: Props) {
           className="hidden h-28 px-8 md:inline-flex lg:h-56"
         />
       </div>
-      <div className="">
+      <br />
+      <div className="bg-black text-red-700 h-60">
+    
         {posts.map((post) => {
-          return (
-            <Link key={post._id} href={`/posts/${post.slug.current}`}>
-              <div className="h-12">
-                <img src={urlFor(post.mainImage).url()!} alt="image" />
+            <Link key={post._id} href="/post">
+               <div className="h-12">
+                <img src="/assets/AIO.png" alt="image" />
               </div>
               <div>
                 <div>{post.title}</div>
                 <div>By </div>
               </div>
-            </Link>
-          )
+              </Link>
         })}
       </div>
     </div>
   )
 }
 
+// runs on serverside (Quality of Nextjs)  Server Side rendering
 export const getServerSideProps = async () => {
   const query = `
   *[_type == "post"]{
