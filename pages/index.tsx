@@ -8,7 +8,7 @@ interface Props {
   posts: [Post]
 }
 export default function Home({ posts }: Props) {
-  console.log(posts);
+  console.log(posts)
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
@@ -34,18 +34,22 @@ export default function Home({ posts }: Props) {
         />
       </div>
       <br />
-      <div className="bg-black text-red-700 h-60">
-    
+      <div className="h-60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 ">
         {posts.map((post) => {
-            <Link key={post._id} href="/post">
-               <div className="h-12">
-                <img src="/assets/AIO.png" alt="image" />
+          return (
+            <Link key={post._id} href={`/post/${post.slug.current}`}>
+              <div className="blog">
+                <img className="h-60 w-full object-cover blog-hover:scale-large transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()!} alt="image" />
+                <div>
+                  <div>{post.title}</div>
+                  <div>
+                    <div>By Abhay Kumar Mittal</div>
+                    {/* <div><img className="h-10 w-full object-cover blog-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.auther.image).url()!} alt="image" /></div> */}
+                   </div>
+                </div>
               </div>
-              <div>
-                <div>{post.title}</div>
-                <div>By </div>
-              </div>
-              </Link>
+            </Link>
+          )
         })}
       </div>
     </div>
@@ -58,12 +62,11 @@ export const getServerSideProps = async () => {
   *[_type == "post"]{
     _id,
     title,
-    body,
-    mainImage,
     auther->{
       name,
       image
     },
+    mainImage,
     slug
   }
 `

@@ -1,5 +1,5 @@
-import {createImageUrlBuilder ,createCurrentUserHook ,createClient} from 'next-sanity'
-
+import {createCurrentUserHook ,createClient} from 'next-sanity'
+import createImageUrlBuilder from "@sanity/image-url";
 export const config = {
     /**
      * Find your project ID and dataset in `sanity.json` in your studio project.
