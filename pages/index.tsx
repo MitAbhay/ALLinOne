@@ -37,7 +37,7 @@ export default function Home({ posts }: Props) {
       <div className="h-60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 ">
         {posts.map((post) => {
           return (
-            <Link key={post._id} href={`/post/${post.slug.current}`}>
+            <Link key={post._id} href={`/Posts/${post.slug.current}`}>
               <div className="blog">
                 <img className="h-60 w-full object-cover blog-hover:scale-large transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()!} alt="image" />
                 <div>
