@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import PortableText from 'react-portable-text'
 import Header from '../../components/Header'
 import { sanityClient, urlFor } from '../../sanity'
 import { Post } from '../../typing'
@@ -11,15 +12,60 @@ function Post({ post }: Props) {
   return (
     <main>
       <Header />
-      <img className="w-full object-cover h-40" src={urlFor(post.mainImage).url()!} alt = ""/>
-      <article className="max-w-3xl p-7 mx-auto">
-        <h1 className="text-3xl mt-7 mb-4">{post.title}</h1>
-        <h2 className="text-xl mb-5 font-light text-gray-400">description</h2>
+      <img
+        className="h-40 w-full object-cover"
+        src={urlFor(post.mainImage).url()!}
+        alt=""
+      />
+      <article className="mx-auto max-w-3xl p-7">
+        <h1 className="mt-7 mb-4 text-3xl">{post.title}</h1>
+        <h2 className="mb-5 text-xl font-light text-gray-400">description</h2>
         <div className="flex items-center space-x-3">
-        <img className="h-10 w-10 rounded-full"src={urlFor(post.mainImage).url()!} alt = ""/> 
-        <p className="text-sm font-extralight">Blog Post by <span className="text-green-700">Abhay Kumar Mittal</span> Published at {new Date(post._createdAt).toLocaleString()}</p>
+          <img
+            className="h-10 w-10 rounded-full"
+            src={urlFor(post.mainImage).url()!}
+            alt=""
+          />
+          <p className="text-sm font-extralight">
+            Blog Post by{' '}
+            <span className="text-green-700">Abhay Kumar Mittal</span> Published
+            at {new Date(post._createdAt).toLocaleString()}
+          </p>
         </div>
+        <div>
+        Lets wait bro
+        {/* <PortableText>
+          className=""
+          content={post.body}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+          serializers={{
+        h1: (props : any) => (<h1 className="text-2xl font-bold my-5" {...props} />),
+        h2: (props : any) =>( <h2 className="text-xl font-bold my-5" {...props} />),
+        li: ({ children } : any) =>( <li className="special-list-item">{children}</li>),
+        link :  ({href, children } : any) =>( <a href={href} className="text-blue-500 hover:underline">{children}</a>),
+      }}
+      /> */}
+        
+      </div>
+  <hr className="border border-yellow-500 max-w-lg mx-auto"/>
+      <form className="mt-7 flex flex-col max-w-lg mx-auto">
+            <label className="space-x-4 my-4">
+              <span>Name</span>
+              <input placeholder="Abhay" type="text" name="name" />
+            </label>
+            <label className="space-x-4 my-4">
+              <span>Email</span>
+              <input placeholder="xyz@xyz.com" type="email" name="email" />
+            </label>
+            <label className="space-x-4 my-4">
+              <span>Message</span>
+              <textarea placeholder="Hey I am Abhay..." name="message" rows={8} />
+            </label>
+      </form>
       </article>
+
+     
     </main>
   )
 }
