@@ -20,15 +20,15 @@ export default Post;
 export const getStaticPaths = async () => {
   const query = `  *[_type == "post"]{
         _id,
-        slug->{
+        slug{
             current
         }}`
 
   const posts = await sanityClient.fetch(query);
-
+console.log(posts)
   const paths = posts.map((post: Post) => ({
     params: {
-      slug: post.slug.current
+      slug: post.slug.current,
     },
   }))
 
@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   _id,
   _createdAt,
     title,
-    auther->{
+    auther{
       name,
       image
     },
