@@ -34,18 +34,22 @@ export default function Home({ posts }: Props) {
         />
       </div>
       <br />
-      <div className="h-60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 ">
+      <div className="grid h-60 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 ">
         {posts.map((post) => {
           return (
             <Link key={post._id} href={`/Posts/${post.slug.current}`}>
               <div className="blog">
-                <img className="h-60 w-full object-cover blog-hover:scale-large transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()!} alt="image" />
+                <img
+                  className="blog-hover:scale-large h-60 w-full object-cover transition-transform duration-200 ease-in-out"
+                  src={urlFor(post.mainImage).url()!}
+                  alt="image"
+                />
                 <div>
                   <div>{post.title}</div>
                   <div>
                     <div>By Abhay Kumar Mittal</div>
                     {/* <div><img className="h-10 w-full object-cover blog-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.auther.image).url()!} alt="image" /></div> */}
-                   </div>
+                  </div>
                 </div>
               </div>
             </Link>
