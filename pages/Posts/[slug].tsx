@@ -4,12 +4,13 @@ import Header from '../../components/Header'
 import { sanityClient, urlFor } from '../../sanity'
 import { Post } from '../../typing'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { useState } from 'react'
 
 interface IFormInput {
   _id: string
-  name: String
-  email: String
-  message: String
+  name: string
+  email: string
+  message: string
 }
 interface Props {
   post: Post
@@ -24,8 +25,20 @@ function Post({ post }: Props) {
   } = useForm<IFormInput>()
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
-    
+    // console.log(data)
+    fetch('/api/postMessage', {
+      method: 'POST',
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    })
+      .then(() => {
+        setsubmited(true)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
+
+  const [submited, setsubmited] = useState(false)
   return (
     <main>
       <Header />
@@ -71,62 +84,66 @@ function Post({ post }: Props) {
       /> */}
         </div>
         <hr className="mx-auto max-w-lg border border-yellow-500" />
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="mx-auto mt-7 flex max-w-lg flex-col"
-        >
-          <input
-            type="hidden"
-            name="id"
-            value={post._id}
-            {...register('_id')}
-          />
-          <label className="my-2">
-            <span className="text-gray-700">Name</span>
-            <input
-              {...(register('name'), { required: true })}
-              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
-              placeholder="Abhay"
-              type="text"
-              name="name"
-            />
-          </label>
-          <label className="my-2">
-            <span className="text-gray-700">Email</span>
-            <input
-              {...(register('email'), { required: true })}
-              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
-              placeholder="xyz@xyz.com"
-              type="email"
-              name="email"
-            />
-          </label>
-          <label className="my-2">
-            <span className="text-gray-700">Message</span>
-            <textarea
-              {...(register('message'), { required: true })}
-              className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
-              placeholder="Hey I am Abhay..."
-              name="message"
-              rows={8}
-            />
-          </label>
+
+        {submited ? (
           <div>
-            {errors.name && (
-              <span className="text-red-600">Name is required</span>
-            )}
-            {errors.name && (
-              <span className="text-red-600">Email is required</span>
-            )}
-            {errors.name && (
-              <span className="text-red-600">Some Meassage is required</span>
-            )}
+            <h2 className="mb-5 text-xl font-light text-gray-400">
+              Thank you for your message
+            </h2>
           </div>
-          <input
-            type="submit"
-            className="focus:shadow-outline mt-4 cursor-pointer rounded bg-yellow-500 py-2 px-4 font-bold shadow hover:bg-yellow-400 hover:text-white"
-          />
-        </form>
+        ) : (
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="mx-auto mt-7 flex max-w-lg flex-col"
+          >
+            <input type="hidden" value={post._id} {...register('_id')} />
+            <label className="my-2">
+              <span className="text-gray-700">Name</span>
+              <input
+                {...register('name', { required: true })}
+                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                placeholder="Abhay"
+                type="text"
+                name="name"
+              />
+            </label>
+            <label className="my-2">
+              <span className="text-gray-700">Email</span>
+              <input
+                {...register('email', { required: true })}
+                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                placeholder="xyz@xyz.com"
+                type="email"
+                name="email"
+              />
+            </label>
+            <label className="my-2">
+              <span className="text-gray-700">Message</span>
+              <textarea
+                {...register('message', { required: true })}
+                className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                placeholder="Hey I am Abhay..."
+                name="message"
+                rows={8}
+              />
+            </label>
+            <div>
+              {errors.name && (
+                <span className="text-red-600">Name is required</span>
+              )}
+              {errors.name && (
+                <span className="text-red-600">Email is required</span>
+              )}
+              {errors.name && (
+                <span className="text-red-600">Some Meassage is required</span>
+              )}
+            </div>
+            <input
+              type="submit"
+              className="focus:shadow-outline mt-4 cursor-pointer rounded bg-yellow-500 py-2 px-4 font-bold shadow hover:bg-yellow-400 hover:text-white"
+            />
+          </form>
+        )}
       </article>
     </main>
   )
