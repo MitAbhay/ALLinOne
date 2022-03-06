@@ -3,12 +3,29 @@ import PortableText from 'react-portable-text'
 import Header from '../../components/Header'
 import { sanityClient, urlFor } from '../../sanity'
 import { Post } from '../../typing'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
+interface IFormInput {
+  _id: string
+  name: String
+  email: String
+  message: String
+}
 interface Props {
   post: Post
 }
 function Post({ post }: Props) {
-  console.log(post)
+  // console.log(post)
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IFormInput>()
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    
+  }
   return (
     <main>
       <Header />
@@ -54,11 +71,21 @@ function Post({ post }: Props) {
       /> */}
         </div>
         <hr className="mx-auto max-w-lg border border-yellow-500" />
-        <form className="mx-auto mt-7 flex max-w-lg flex-col">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="mx-auto mt-7 flex max-w-lg flex-col"
+        >
+          <input
+            type="hidden"
+            name="id"
+            value={post._id}
+            {...register('_id')}
+          />
           <label className="my-2">
             <span className="text-gray-700">Name</span>
             <input
-              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              {...(register('name'), { required: true })}
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
               placeholder="Abhay"
               type="text"
               name="name"
@@ -67,7 +94,8 @@ function Post({ post }: Props) {
           <label className="my-2">
             <span className="text-gray-700">Email</span>
             <input
-              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              {...(register('email'), { required: true })}
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
               placeholder="xyz@xyz.com"
               type="email"
               name="email"
@@ -76,12 +104,28 @@ function Post({ post }: Props) {
           <label className="my-2">
             <span className="text-gray-700">Message</span>
             <textarea
-              className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              {...(register('message'), { required: true })}
+              className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
               placeholder="Hey I am Abhay..."
               name="message"
               rows={8}
             />
           </label>
+          <div>
+            {errors.name && (
+              <span className="text-red-600">Name is required</span>
+            )}
+            {errors.name && (
+              <span className="text-red-600">Email is required</span>
+            )}
+            {errors.name && (
+              <span className="text-red-600">Some Meassage is required</span>
+            )}
+          </div>
+          <input
+            type="submit"
+            className="focus:shadow-outline mt-4 cursor-pointer rounded bg-yellow-500 py-2 px-4 font-bold shadow hover:bg-yellow-400 hover:text-white"
+          />
         </form>
       </article>
     </main>
