@@ -33,8 +33,14 @@ function Post({ post }: Props) {
           </p>
         </div>
         <div>
-        Lets wait bro
-        {/* <PortableText>
+          Lets wait bro
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          {/* <PortableText>
           className=""
           content={post.body}
           projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
@@ -46,26 +52,38 @@ function Post({ post }: Props) {
         link :  ({href, children } : any) =>( <a href={href} className="text-blue-500 hover:underline">{children}</a>),
       }}
       /> */}
-        
-      </div>
-  <hr className="border border-yellow-500 max-w-lg mx-auto"/>
-      <form className="mt-7 flex flex-col max-w-lg mx-auto">
-            <label className="space-x-4 my-4">
-              <span>Name</span>
-              <input placeholder="Abhay" type="text" name="name" />
-            </label>
-            <label className="space-x-4 my-4">
-              <span>Email</span>
-              <input placeholder="xyz@xyz.com" type="email" name="email" />
-            </label>
-            <label className="space-x-4 my-4">
-              <span>Message</span>
-              <textarea placeholder="Hey I am Abhay..." name="message" rows={8} />
-            </label>
-      </form>
+        </div>
+        <hr className="mx-auto max-w-lg border border-yellow-500" />
+        <form className="mx-auto mt-7 flex max-w-lg flex-col">
+          <label className="my-2">
+            <span className="text-gray-700">Name</span>
+            <input
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              placeholder="Abhay"
+              type="text"
+              name="name"
+            />
+          </label>
+          <label className="my-2">
+            <span className="text-gray-700">Email</span>
+            <input
+              className="form-input mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              placeholder="xyz@xyz.com"
+              type="email"
+              name="email"
+            />
+          </label>
+          <label className="my-2">
+            <span className="text-gray-700">Message</span>
+            <textarea
+              className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow ring-yellow-600 outline-none focus:ring"
+              placeholder="Hey I am Abhay..."
+              name="message"
+              rows={8}
+            />
+          </label>
+        </form>
       </article>
-
-     
     </main>
   )
 }
