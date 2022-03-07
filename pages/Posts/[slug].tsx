@@ -127,15 +127,15 @@ function Post({ post }: Props) {
                 rows={8}
               />
             </label>
-            <div>
+            <div className="flex flex-col">
               {errors.name && (
-                <span className="text-red-600">Name is required</span>
+                <span className="text-red-600">*Name is required</span>
               )}
               {errors.name && (
-                <span className="text-red-600">Email is required</span>
+                <span className="text-red-600">*Email is required</span>
               )}
               {errors.name && (
-                <span className="text-red-600">Some Meassage is required</span>
+                <span className="text-red-600">*Some Meassage is required</span>
               )}
             </div>
             <input
@@ -144,6 +144,19 @@ function Post({ post }: Props) {
             />
           </form>
         )}
+        <hr className="mx-auto max-w-lg border border-yellow-500 mt-6" />
+        
+        <div className="shadow-yellow-500 max-w-2xl mx-auto shadow space-y-2 mt-10 m-2 p-4 flex flex-col">
+
+          <h1 className="text-5xl text-black">Comments</h1>
+          <hr/>
+          {post.messages.map((message) => (
+                  <div className="space-x-4 flex flex-row">
+                    <h2 className="text-lg text-yellow-400">{message.name}</h2>
+                    <p className="font-light">{message.message}</p>
+                  </div>
+          ))}
+        </div>
       </article>
     </main>
   )
