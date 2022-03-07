@@ -16,7 +16,7 @@ interface Props {
   post: Post
 }
 function Post({ post }: Props) {
-  // console.log(post)
+  console.log(post)
   const {
     register,
     handleSubmit,
@@ -181,6 +181,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       name,
       image
     },
+    'messages':*[_type == "message" && aprooved==true],
     mainImage,
     slug,
     body
