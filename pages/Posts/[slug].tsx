@@ -86,8 +86,8 @@ function Post({ post }: Props) {
         <hr className="mx-auto max-w-lg border border-yellow-500" />
 
         {submited ? (
-          <div>
-            <h2 className="mb-5 text-xl font-light text-gray-400">
+          <div className="m-5 rounded bg-yellow-500 p-5 text-center ">
+            <h2 className="text-xl font-bold text-white">
               Thank you for your message
             </h2>
           </div>
