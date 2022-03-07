@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/medium2-sanity/node_modules
+/backend-ALLinOne/node_modules
 /.pnp
 .pnp.js
 

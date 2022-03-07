@@ -12,14 +12,14 @@ export default function Home({ posts }: Props) {
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
-        <title>AllInOne</title>
+        <title>ALLinOne</title>
       </Head>
       <Header /> {/*   // Header component */}
       <div className="flex items-center justify-between border-y border-black bg-yellow-500 py-10 lg:py-8">
         <div className="space-y-5 px-10 font-serif">
           <div className="text-5xl">
             <span className="underline decoration-black decoration-4">
-              ALL IN ONE
+              ALL in One
             </span>{' '}
             , place to write read and connect
           </div>
