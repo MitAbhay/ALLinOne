@@ -16,7 +16,7 @@ interface Props {
   post: Post
 }
 function Post({ post }: Props) {
-  console.log(post)
+  // console.log(post)
   const {
     register,
     handleSubmit,
@@ -144,17 +144,16 @@ function Post({ post }: Props) {
             />
           </form>
         )}
-        <hr className="mx-auto max-w-lg border border-yellow-500 mt-6" />
-        
-        <div className="shadow-yellow-500 max-w-2xl mx-auto shadow space-y-2 mt-10 m-2 p-4 flex flex-col">
+        <hr className="mx-auto mt-6 max-w-lg border border-yellow-500" />
 
+        <div className="m-2 mx-auto mt-10 flex max-w-2xl flex-col space-y-2 p-4 shadow shadow-yellow-500">
           <h1 className="text-5xl text-black">Comments</h1>
-          <hr/>
+          <hr />
           {post.messages.map((message) => (
-                  <div className="space-x-4 flex flex-row">
-                    <h2 className="text-lg text-yellow-400">{message.name}</h2>
-                    <p className="font-light">{message.message}</p>
-                  </div>
+            <div key={message._id} className="flex flex-row space-x-4">
+              <h2 className="text-lg text-yellow-400">{message.name}</h2>
+              <p className="font-light">{message.message}</p>
+            </div>
           ))}
         </div>
       </article>
@@ -194,7 +193,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       name,
       image
     },
-    'messages':*[_type == "message" && aprooved==true],
+    'messages':*[_type == "message" && aprooved==true ],
     mainImage,
     slug,
     body

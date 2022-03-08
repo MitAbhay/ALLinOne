@@ -3,12 +3,12 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <div className="mx-auto flex max-w-7xl items-center justify-between p-5">
-      <div className="flex items-center space-x-5">
+      <div className="flex items-center space-x-7">
         <Link href="/">
           <img
-            src="/assets/medium.png"
+            src="/assets/ALLinOne-logos_black2.png"
             alt="logo"
-            className="w-44 cursor-pointer object-contain"
+            className="w-40 cursor-pointer object-fit"
           />
         </Link>
         <div className="hidden items-center space-x-3 md:inline-flex">
