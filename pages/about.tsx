@@ -5,7 +5,9 @@ export default function About() {
   return (
     <>
     <Header />
-    Hey I am About
+     <div>
+       
+     </div>
     </>
   )
 }

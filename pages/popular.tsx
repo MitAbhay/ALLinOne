@@ -24,7 +24,7 @@ export default function Popular({ posts }: Props) {
                 <div className="bg-blue-200 p-2 shadow shadow-blue-500">
                   <div className="text-lg font-bold">{post.title}</div>
                   <div>
-                    <div className="">By Abhay Kumar Mittal</div>
+                    <div className="">By Abhay Kumar Mittal at {new Date(post._createdAt).toLocaleString()}</div>
                     {/* <div><img className="h-10 w-full object-cover blog-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.auther.image).url()!} alt="image" /></div> */}
                   </div>
                 </div>
@@ -41,6 +41,7 @@ export default function Popular({ posts }: Props) {
 export const getServerSideProps = async () => {
   const query = `
   *[_type == "post"]{
+    _createdAt,
     _id,
     title,
     auther->{

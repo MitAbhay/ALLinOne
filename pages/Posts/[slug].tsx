@@ -62,6 +62,7 @@ function Post({ post }: Props) {
             at {new Date(post._createdAt).toLocaleString()}
           </p>
         </div>
+        <hr className="m-7 mx-auto max-w-lg border border-blue-500" />
         <div>
           <PortableText
             className=""
@@ -86,12 +87,22 @@ function Post({ post }: Props) {
             }}
           />
         </div>
-        <hr className="mx-auto max-w-lg border border-yellow-500" />
-
+        <hr className="mt-5 mx-auto max-w-lg border border-blue-500" />
+        <div className="m-5 mx-auto flex max-w-2xl flex-col space-y-2 p-4 shadow shadow-blue-500">
+          <h1 className="text-5xl text-black">Comments</h1>
+          <hr />
+          {post.messages.map((message) => (
+            <div key={message._id} className="flex flex-row space-x-4">
+              <h2 className="text-lg text-blue-400">{message.name}</h2>
+              <p className="font-light">{message.message}</p>
+            </div>
+          ))}
+        </div>
+        <hr className="mx-auto max-w-lg border border-blue-500" />
         {submited ? (
-          <div className="m-5 rounded bg-yellow-500 p-5 text-center ">
+          <div className="m-5 rounded bg-blue-500 p-5 text-center ">
             <h2 className="text-xl font-bold text-white">
-              Thank you for your message
+              Thank you for your Comment
             </h2>
           </div>
         ) : (
@@ -104,7 +115,7 @@ function Post({ post }: Props) {
               <span className="text-gray-700">Name</span>
               <input
                 {...register('name', { required: true })}
-                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-blue-600 focus:ring"
                 placeholder="Abhay"
                 type="text"
                 name="name"
@@ -114,17 +125,17 @@ function Post({ post }: Props) {
               <span className="text-gray-700">Email</span>
               <input
                 {...register('email', { required: true })}
-                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                className="form-input mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-blue-600 focus:ring"
                 placeholder="xyz@xyz.com"
                 type="email"
                 name="email"
               />
             </label>
             <label className="my-2">
-              <span className="text-gray-700">Message</span>
+              <span className="text-gray-700">Comment</span>
               <textarea
                 {...register('message', { required: true })}
-                className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-yellow-600 focus:ring"
+                className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-blue-600 focus:ring"
                 placeholder="Hey I am Abhay..."
                 name="message"
                 rows={8}
@@ -143,22 +154,13 @@ function Post({ post }: Props) {
             </div>
             <input
               type="submit"
-              className="focus:shadow-outline mt-4 cursor-pointer rounded bg-yellow-500 py-2 px-4 font-bold shadow hover:bg-yellow-400 hover:text-white"
+              className="focus:shadow-outline mt-4 cursor-pointer rounded bg-blue-500 py-2 px-4 font-bold shadow hover:bg-blue-400 hover:text-white"
             />
           </form>
         )}
-        <hr className="mx-auto mt-6 max-w-lg border border-yellow-500" />
+        <hr className="mx-auto mt-6 max-w-lg border border-blue-500" />
 
-        <div className="m-2 mx-auto mt-10 flex max-w-2xl flex-col space-y-2 p-4 shadow shadow-yellow-500">
-          <h1 className="text-5xl text-black">Comments</h1>
-          <hr />
-          {post.messages.map((message) => (
-            <div key={message._id} className="flex flex-row space-x-4">
-              <h2 className="text-lg text-yellow-400">{message.name}</h2>
-              <p className="font-light">{message.message}</p>
-            </div>
-          ))}
-        </div>
+      
       </article>
     </main>
   )
