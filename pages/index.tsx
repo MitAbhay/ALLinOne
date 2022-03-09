@@ -22,7 +22,7 @@ export default function Home({ posts }: Props) {
             <span className="underline decoration-black decoration-4">
               ALL in One
             </span>{' '}
-            , place to write read and connect
+            , place where I write and you Read...
           </div>
           <div className="text-sm">
             Here you can find each and every content, all the stuff one place.😊

@@ -63,25 +63,28 @@ function Post({ post }: Props) {
           </p>
         </div>
         <div>
-          Lets wait bro
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          {/* <PortableText>
-          className=""
-          content={post.body}
-          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-          serializers={{
-        h1: (props : any) => (<h1 className="text-2xl font-bold my-5" {...props} />),
-        h2: (props : any) =>( <h2 className="text-xl font-bold my-5" {...props} />),
-        li: ({ children } : any) =>( <li className="special-list-item">{children}</li>),
-        link :  ({href, children } : any) =>( <a href={href} className="text-blue-500 hover:underline">{children}</a>),
-      }}
-      /> */}
+          <PortableText
+            className=""
+            content={post.body}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            serializers={{
+              h1: (props: any) => (
+                <h1 className="my-5 text-2xl font-bold" {...props} />
+              ),
+              h2: (props: any) => (
+                <h2 className="my-5 text-xl font-bold" {...props} />
+              ),
+              li: ({ children }: any) => (
+                <li className="special-list-item">{children}</li>
+              ),
+              link: ({ href, children }: any) => (
+                <a href={href} className="text-blue-500 hover:underline">
+                  {children}
+                </a>
+              ),
+            }}
+          />
         </div>
         <hr className="mx-auto max-w-lg border border-yellow-500" />
 
