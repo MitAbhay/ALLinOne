@@ -1,35 +1,89 @@
-# ALLinOne
-  Best Blogging site 
+<div id="top"></div>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://all-in-one-mitabhay.vercel.app/" target="_blank">
+    <img src="/assets/ALLinOne-logos_white.png" alt="Logo" width="120" height="120">
+  </a>
 
+  <h2 align="center">ALLinOne</h2>
 
+  <p align="center">
+    My Blogging Website
+    <br />
+    <br />
+    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank"">Report Bug</a>
+    ·
+    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank"">Request Feature</a>
+  </p>
+</div>
+<!-- ABOUT THE PROJECT -->
 
+## About The Project
 
+<div align="center">
+<img src="assets/ss/ss1.jpeg" alt="ss" width="250" height="520">
+<img src="assets/ss/ss2.jpeg" alt="ss" width="250" height="520">
+<img src="assets/ss/ss3.jpeg" alt="ss" width="250" height="520">
+<img src="assets/ss/ss4.jpeg" alt="ss" width="250" height="520">
+<img src="assets/ss/ss5.jpeg" alt="ss" width="250" height="520">
+<img src="assets/ss/ss6.jpeg" alt="ss" width="250" height="520">
+</div>
 
+This is my Blogging Website , which I named as ALLinOne becuase this is the place where I upload blogs and articles related to all technical and social domains.
+I have used various technolgies to make application best for the user, I have tried my best to make this webssite user-friendly.
 
-<!-- # Next.js + Tailwind CSS Example
+## What Tech Stack I have Used and Why?
+- NextJs : I have created the Frontend part this website using NextJs Framework, and realy its the best Frontend  Framework I have ever used. I have used powerfull Features of the NextJs that is ServersideRendering and StaticSiteGeneation to make this web application.
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Preview
+<!-- CONTRIBUTING -->
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+# CONTRIBUTION TO THIS PROJECT
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+You can also Contribute to this project to make it more better and user friendly.
 
-## Deploy your own
+## Prerequisites
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+You need NodeJs installed in your system to run this project
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+- To check
+  ```sh
+  node -v
+  ```
 
-## How to use
+## Installation
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Follow the following points to run this in your system
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+1.  Fork the repo
+2.  Clone the repo
+    ```sh
+    git clone https://github.com/your_username_/Project-Name.git
+    ```
+3.  Enter in the project directory
+    ```sh
+    cd Project-Name
+    ```
+4.  Run it
+    ```sh 
+    npm run dev
+    ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)). -->
+## Cuntribution Steps
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- CONTACT -->
+# Contact Me
+
+- Abhay Kumar Mittal - [LinkedIn](https://www.linkedin.com/in/mitabhay/)
