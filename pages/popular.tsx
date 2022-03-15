@@ -11,7 +11,9 @@ export default function Popular({ posts }: Props) {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-lg space-y-5 text-center">
+      <div className="mx-auto max-w-7xl">
+      <div className="text-5xl font-extralight text-center text-blue-800 shadow-md p-4">Some Popular Blogs</div>
+      <div className="grid h-60 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => {
           return (
             <Link key={post._id} href={`/Posts/${post.slug.current}`}>
@@ -32,6 +34,7 @@ export default function Popular({ posts }: Props) {
             </Link>
           )
         })}
+      </div>
       </div>
     </>
   )
