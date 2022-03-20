@@ -30,11 +30,19 @@
 <img src="assets/ss/ss6.jpeg" alt="ss" width="250" height="520">
 </div>
 
-This is my Blogging Website , which I named as ALLinOne becuase this is the place where I upload blogs and articles related to all technical and social domains.
+This is my Blogging Website , which I named as ALLinOne becuase this is the place where I upload blogs and articles related to all technical and social domains. You can view any of the blog according to your intrest freely and can make best out of it for yourself, you can also comment or leave a message on by blogs, which on approval by me, will be shown to everyone.
+
 I have used various technolgies to make application best for the user, I have tried my best to make this webssite user-friendly.
+And I am trying to making it more user-friendly and attractive so the user can make best out of it.
+This Application is still in development mode, and I am planning to make it public blog website where everyone can post their blogs and can manage their personal profile.
 
 ## What Tech Stack I have Used and Why?
-- NextJs : I have created the Frontend part this website using NextJs Framework, and realy its the best Frontend  Framework I have ever used. I have used powerfull Features of the NextJs that is ServersideRendering and StaticSiteGeneation to make this web application.
+
+- NextJs : I have created the Frontend part this website using NextJs Framework, and realy its the best Frontend Framework I have ever used. I have used powerfull Features of the NextJs that is ServersideRendering and StaticSiteGeneation to make this web application.
+
+- TypeScript : I have used Typescript in this Application, because it makes the js develepment easier for us when we are dealing with large codes. It helps us to maintain the type of each and every thing easily.
+
+- Sanity CMS : The backend of this web Application is intiated by sanity, it gives us the prebuilt schemas and all which makes our development faster, its fast and easy to use.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -67,7 +75,7 @@ Follow the following points to run this in your system
     cd Project-Name
     ```
 4.  Run it
-    ```sh 
+    ```sh
     npm run dev
     ```
 
@@ -84,6 +92,7 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <!-- CONTACT -->
+
 # Contact Me
 
 - Abhay Kumar Mittal - [LinkedIn](https://www.linkedin.com/in/mitabhay/)
