@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://all-in-one-mitabhay.vercel.app/" target="_blank">
-    <img src="/assets/ALLinOne-logos_white.png" alt="Logo" width="120" height="120">
+    <img src="./public/ALLinOne-logos_white.png" alt="Logo" width="200" height="200">
   </a>
 
   <h2 align="center">ALLinOne</h2>
@@ -12,9 +12,9 @@
     My Blogging Website
     <br />
     <br />
-    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank"">Report Bug</a>
+    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank">Report Bug</a>
     ·
-    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank"">Request Feature</a>
+    <a href="https://github.com/MitAbhay/ALLinOne/issues target="_blank">Request Feature</a>
   </p>
 </div>
 <!-- ABOUT THE PROJECT -->
@@ -22,12 +22,10 @@
 ## About The Project
 
 <div align="center">
-<img src="assets/ss/ss1.jpeg" alt="ss" width="250" height="520">
-<img src="assets/ss/ss2.jpeg" alt="ss" width="250" height="520">
-<img src="assets/ss/ss3.jpeg" alt="ss" width="250" height="520">
-<img src="assets/ss/ss4.jpeg" alt="ss" width="250" height="520">
-<img src="assets/ss/ss5.jpeg" alt="ss" width="250" height="520">
-<img src="assets/ss/ss6.jpeg" alt="ss" width="250" height="520">
+<img src="./public/ss/ss1.png" alt="ss" width="450" height="270">
+<img src="./public/ss/ss2.png" alt="ss" width="450" height="270">
+<img src="./public/ss/ss3.png" alt="ss" width="450" height="270">
+<img src="./public/ss/ss4.png" alt="ss" width="450" height="270">
 </div>
 
 This is my Blogging Website , which I named as ALLinOne becuase this is the place where I upload blogs and articles related to all technical and social domains. You can view any of the blog according to your intrest freely and can make best out of it for yourself, you can also comment or leave a message on by blogs, which on approval by me, will be shown to everyone.
