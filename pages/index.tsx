@@ -9,7 +9,7 @@ interface Props {
   posts: [Post]
 }
 export default function Home({ posts }: Props) {
-  console.log(posts)
+  // console.log(posts)
   return (<>
     <Head>
       <title>ALLinOne</title>
