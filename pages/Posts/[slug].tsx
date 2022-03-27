@@ -10,7 +10,7 @@ interface IFormInput {
   _id: string
   name: string
   email: string
-  message: string
+  comment: string
 }
 interface Props {
   post: Post
@@ -26,7 +26,7 @@ function Post({ post }: Props) {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     // console.log(data)
-    fetch('/api/postMessage', {
+    fetch('/api/postComment', {
       method: 'POST',
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     })
@@ -91,10 +91,10 @@ function Post({ post }: Props) {
         <div className="m-5 mx-auto flex max-w-2xl flex-col space-y-2 p-4 shadow shadow-blue-500">
           <h1 className="text-5xl text-black">Comments</h1>
           <hr />
-          {post.messages.map((message) => (
-            <div key={message._id} className="flex flex-row space-x-4">
-              <h2 className="text-lg text-blue-400">{message.name}</h2>
-              <p className="font-light">{message.message}</p>
+          {post.comments.map((comment) => (
+            <div key={comment._id} className="flex flex-row space-x-4">
+              <h2 className="text-lg text-blue-400">{comment.name}</h2>
+              <p className="font-light">{comment.comment}</p>
             </div>
           ))}
         </div>
@@ -134,10 +134,10 @@ function Post({ post }: Props) {
             <label className="my-2">
               <span className="text-gray-700">Comment</span>
               <textarea
-                {...register('message', { required: true })}
+                {...register('comment', { required: true })}
                 className="form-textarea mt-1 block w-full rounded border py-2 px-3 shadow outline-none ring-blue-600 focus:ring"
                 placeholder="Hey I am Abhay..."
-                name="message"
+                name="comment"
                 rows={8}
               />
             </label>
@@ -149,7 +149,7 @@ function Post({ post }: Props) {
                 <span className="text-red-600">*Email is required</span>
               )}
               {errors.name && (
-                <span className="text-red-600">*Some Meassage is required</span>
+                <span className="text-red-600">*Some Comment is required</span>
               )}
             </div>
             <input
@@ -198,7 +198,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       name,
       image
     },
-    'messages':*[_type == "message" && aprooved==true ],
+    'comments':*[_type == "comment" && aprooved==true ],
     mainImage,
     slug,
     body

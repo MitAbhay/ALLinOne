@@ -11,15 +11,15 @@ export interface Post {
       url: string
     }
   }
-  messages: message[]
+  comments: comment[]
   slug: {
     current: string
   }
   body: [object]
 }
 
-export interface Message {
-  message: string
+export interface Comment {
+  comment: string
   aprooved: boolean
   _id: string
   _createdAt: string

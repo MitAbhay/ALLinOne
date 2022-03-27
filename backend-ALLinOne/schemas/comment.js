@@ -1,6 +1,6 @@
 export default {
-  name: 'message',
-  title: 'Message',
+  name: 'comment',
+  title: 'Comment',
   type: 'document',
   fields: [
     {
@@ -18,7 +18,7 @@ export default {
       type: 'string',
     },
     {
-      name: 'message',
+      name: 'comment',
       type: 'text',
     },
     {

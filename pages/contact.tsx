@@ -1,4 +1,5 @@
 // import Link from 'next/link'
+import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Header from '../components/Header'
 interface IFormInput {
@@ -9,6 +10,8 @@ interface IFormInput {
 }
 
 export default function Contact() {
+  const [submited, setsubmited] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -35,15 +38,23 @@ export default function Contact() {
       <div className="my-8 text-center text-7xl text-blue-600">
         Contact Me Anytime
       </div>
-      <div className="mx-auto max-w-lg text-lg">
-        <div className="border border-gray-300 p-6 sm:rounded-md">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <label className="mb-6 block">
-              <span className="text-gray-700">Your name</span>
-              <input
-                type="text"
-                name="name"
-                className="
+      {submited ? (
+        <div className="m-5 rounded bg-blue-500 p-5 text-center ">
+          <h2 className="text-xl font-bold text-white">
+            Thank you for your Comment
+          </h2>
+        </div>
+      ) : (
+        <div className="mx-auto max-w-lg text-lg">
+          <div className="border border-gray-300 p-6 sm:rounded-md">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <label className="mb-6 block">
+                <span className="text-gray-700">Your name</span>
+                <input
+                  {...register('name', { required: true })}
+                  type="text"
+                  name="name"
+                  className="
             mt-1
             block
             w-full
@@ -55,15 +66,16 @@ export default function Contact() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                placeholder="Joe Bloggs"
-              />
-            </label>
-            <label className="mb-6 block">
-              <span className="text-gray-700">Email address</span>
-              <input
-                name="email"
-                type="email"
-                className="
+                  placeholder="Joe Bloggs"
+                />
+              </label>
+              <label className="mb-6 block">
+                <span className="text-gray-700">Email address</span>
+                <input
+                  {...register('email', { required: true })}
+                  name="email"
+                  type="email"
+                  className="
             mt-1
             block
             w-full
@@ -75,15 +87,16 @@ export default function Contact() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                placeholder="joe.bloggs@example.com"
-                required
-              />
-            </label>
-            <label className="mb-6 block">
-              <span className="text-gray-700">Message</span>
-              <textarea
-                name="message"
-                className="
+                  placeholder="joe.bloggs@example.com"
+                  required
+                />
+              </label>
+              <label className="mb-6 block">
+                <span className="text-gray-700">Message</span>
+                <textarea
+                  {...register('message', { required: true })}
+                  name="message"
+                  className="
             mt-1
             block
             w-full
@@ -95,14 +108,27 @@ export default function Contact() {
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-                rows="3"
-                placeholder="Tell us what you're thinking about..."
-              ></textarea>
-            </label>
-            <div className="mb-6">
-              <button
-                type="submit"
-                className="
+                  rows="3"
+                  placeholder="Tell us what you're thinking about..."
+                ></textarea>
+              </label>
+              <div className="flex flex-col">
+                {errors.name && (
+                  <span className="text-red-600">*Name is required</span>
+                )}
+                {errors.name && (
+                  <span className="text-red-600">*Email is required</span>
+                )}
+                {errors.name && (
+                  <span className="text-red-600">
+                    *Some Meassage is required
+                  </span>
+                )}
+              </div>
+              <div className="mb-6">
+                <button
+                  type="submit"
+                  className="
             focus:shadow-outline
             h-10
             rounded-lg
@@ -113,14 +139,14 @@ export default function Contact() {
             duration-150
             hover:bg-indigo-800
           "
-              >
-                Contact Us
-              </button>
-            </div>
-          </form>
+                >
+                  Contact Us
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      )}
     </>
   )
 }
-;<div className="mx-auto max-w-7xl text-center"></div>
