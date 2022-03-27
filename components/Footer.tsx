@@ -1,4 +1,4 @@
-// import Link from 'next/link'
+// Footer for all the pages
 export default function Footer() {
   return (
     <div className="font-light text-sm items-center text-center">

@@ -41,7 +41,7 @@ export default function Contact() {
       {submited ? (
         <div className="m-5 rounded bg-blue-500 p-5 text-center ">
           <h2 className="text-xl font-bold text-white">
-            Thank you for your Comment
+            Message Sent Successfully 🙂
           </h2>
         </div>
       ) : (
@@ -54,18 +54,7 @@ export default function Contact() {
                   {...register('name', { required: true })}
                   type="text"
                   name="name"
-                  className="
-            mt-1
-            block
-            w-full
-            rounded-md
-            border-gray-300
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="Joe Bloggs"
                 />
               </label>
@@ -75,18 +64,7 @@ export default function Contact() {
                   {...register('email', { required: true })}
                   name="email"
                   type="email"
-                  className="
-            mt-1
-            block
-            w-full
-            rounded-md
-            border-gray-300
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
+                  className=" mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="joe.bloggs@example.com"
                   required
                 />
@@ -96,19 +74,8 @@ export default function Contact() {
                 <textarea
                   {...register('message', { required: true })}
                   name="message"
-                  className="
-            mt-1
-            block
-            w-full
-            rounded-md
-            border-gray-300
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
-                  rows="3"
+                  className=" mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  rows='3'
                   placeholder="Tell us what you're thinking about..."
                 ></textarea>
               </label>
@@ -128,17 +95,7 @@ export default function Contact() {
               <div className="mb-6">
                 <button
                   type="submit"
-                  className="
-            focus:shadow-outline
-            h-10
-            rounded-lg
-            bg-indigo-700
-            px-5
-            text-indigo-100
-            transition-colors
-            duration-150
-            hover:bg-indigo-800
-          "
+                  className="focus:shadow-outline h-10 rounded-lg bg-indigo-700 px-5 text-indigo-100 transition-colors duration-150 hover:bg-indigo-800"
                 >
                   Contact Us
                 </button>

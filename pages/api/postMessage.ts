@@ -12,21 +12,21 @@ const config = {
 const client = sanityClient(config)
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { _id, name, email, comment } = JSON.parse(req.body)
+  const { _id, name, email, message } = JSON.parse(req.body)
   // console.log(req.body)
   try {
     client.create({
-      _type: 'comment',
+      _type: 'message',
       post: {
         _type: 'reference',
         _ref: _id,
       },
       name,
       email,
-      comment,
+      message,
     })
   } catch (error) {
     return res.status(500).json({ message: 'Message failed : Server Error' })
   }
-  return res.status(200).json({ message: 'Comment added successfully' })
+  return res.status(200).json({ message: 'Message added successfully' })
 }
