@@ -87,12 +87,13 @@ function Post({ post }: Props) {
             }}
           />
         </div>
-        <hr className="mt-5 mx-auto max-w-lg border border-blue-500" />
+        <hr className="mx-auto mt-5 max-w-lg border border-blue-500" />
         <div className="m-5 mx-auto flex max-w-2xl flex-col space-y-2 p-4 shadow shadow-blue-500">
           <h1 className="text-5xl text-black">Comments</h1>
           <hr />
           {post.comments.map((comment) => (
             <div key={comment._id} className="flex flex-row space-x-4">
+              {console.log(comment)}
               <h2 className="text-lg text-blue-400">{comment.name}</h2>
               <p className="font-light">{comment.comment}</p>
             </div>
@@ -159,8 +160,6 @@ function Post({ post }: Props) {
           </form>
         )}
         <hr className="mx-auto mt-6 max-w-lg border border-blue-500" />
-
-      
       </article>
     </main>
   )

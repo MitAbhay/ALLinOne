@@ -12,7 +12,7 @@ export default function Popular({ posts }: Props) {
     <>
       <Header />
       <div className="mx-auto max-w-7xl">
-        <div className="p-4 text-center text-5xl font-extralight text-blue-800 shadow-md">
+        <div className="p-4 mb-4 text-center text-5xl text-blue-800 shadow-md font-bold">
           Some Popular Blogs
         </div>
         <div className="grid h-60 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">

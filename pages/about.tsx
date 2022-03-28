@@ -4,13 +4,13 @@ export default function About() {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-7xl text-center">
-        <div className="">
-          <img src="/mypic.jpg" alt="mypic" />
-        </div>
-        <div className="text-lg">
-          <div>Abhay Kumar Mittal</div>
-          <p>
+      <div className="mx-auto mt-16 flex max-w-7xl border-4 border-double border-blue-800 p-4 text-center drop-shadow-lg">
+        <img src="/mypic.jpg" alt="mypic" width="400" />
+        <div className="mx-16 content-center">
+          <div className="font-serif text-6xl font-bold text-blue-800">
+            Abhay Kumar Mittal
+          </div>
+          <p className="mt-8 font-serif text-2xl">
             I am a passionate student who is pursuing my major in computer
             science at the National Institute of Technology Hamirpur, India. I
             enjoy solving technical problems, researching and developing new
