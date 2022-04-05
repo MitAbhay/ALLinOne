@@ -1,5 +1,6 @@
 // import Link from 'next/link'
 import Link from 'next/link'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typing'
@@ -41,6 +42,7 @@ export default function Popular({ posts }: Props) {
           })}
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

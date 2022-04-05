@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 export default function About() {
@@ -24,6 +25,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

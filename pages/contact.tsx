@@ -1,6 +1,7 @@
 // import Link from 'next/link'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 interface IFormInput {
   _id: string
@@ -102,6 +103,7 @@ export default function Contact() {
           </div>
         </div>
       )}
+      <Footer/>
     </>
   )
 }
