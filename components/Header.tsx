@@ -23,6 +23,9 @@ export default function Header() {
           <h3 className="text-lg hover:font-bold">
             <Link href="/popular">Popular</Link>
           </h3>
+          <h3 className="text-lg hover:font-bold">
+            <Link href="/popular">LogIn/SignUp</Link>
+          </h3>
         </div>
       </div>
     </div>
